@@ -1,0 +1,522 @@
+@charset "utf-8";
+
+.conBg{   /*배경백그라운드가 다 동일하게 적용이 되어서 동일한 클래스명을 적용해서 한번에 적용*/
+    background:url(../images/main/mainBanner.png) no-repeat center center;
+    background-size:cover; 
+    padding:150px 0;
+}
+/*메인슬라이더*/
+.mainSlider{                  /*비디오 적용하는 방법*/
+    height:950px;             /*1.세로값적용*/
+    overflow:hidden;          /*6.넘치는 부분은 가려줌*/
+    position:relative;        /*4.부모에게 기준점적용*/
+}
+#mainVideo{
+    position:absolute;         /*2.앱솔루트로 띄운다.*/
+    left:50%;                  /*3.왼쪽 50%로 줄여준후*/
+    margin-left:-960px;        /*4.왼쪽 -960px적용해서 가로정렬시켜주고*/
+}
+.mainTxt{
+    width:100%;               /*가로를 100%로 맞춰서 가로정렬되게 함*/
+    position:absolute;        /*비디오 삽입후 텍스트가 안보이니 앱솔루트로 띄우고*/
+    top:50%;
+    margin-top:-191px; 
+    font-family:"Godo";
+    color:#fff;
+    text-align:center;
+}
+.mainTxt h3{
+    font-size:30px; 
+}
+.mainTxt h2{
+    font-size:50px;
+    margin:20px 0; 
+}
+.mainTxt h2 span{
+    color:#fd0000;
+}
+
+.mainIcon{
+    display:inline-block;   /*ul를 일라인블럭으로(a태그가 일라인요소)적용해주면 정렬이 가능함*/
+    margin:30px 0; 
+}
+.mainIcon li{
+    float:left;
+    margin:0 25px; 
+}
+.mainIcon li p{
+    margin-top:20px; 
+}
+
+.icon{
+    width:160px;
+    height:160px;
+    background:rgba(255,255,255,0.4);
+    border-radius:50%;
+    transition:background 0.3s;    
+}
+/*호버*/
+.mainIcon li:hover .icon{
+    background:rgba(225,225,225,1);   /*적용후 원본에 transition적용*/ 
+}
+/*호버*/
+
+.icon img{
+    padding-top:42px;     /*세로160에서 아이콘 이미지 세로값빼고 적용*/
+}
+
+
+
+
+/*메인컨텐츠01*/
+.mainCon01{
+    background-image:url(../images/main/mainCon01Bg.png);
+    color:#080808;
+}
+
+.con01L{
+    width:517px;
+    height:600px;
+    background:url(../images/main/con01Img01.png) no-repeat center center;/*hover에서 transform적용후 센터,센터적용*/
+    border-radius:30px 0;
+    background-size:100%; /*hover에서 transform적용후 백그라운드 사이즈 100%적용*/
+    float:left;
+    transition:background-size 0.5s; /*hover에서 transform적용후 transition 사이즈가 커지게 적용*/
+}
+
+/*호버(백그라운드이미지적용법)*/
+.con01L:hover{
+    background-size:150%;
+}
+/*호버*/
+
+.con01L a{
+    display:block;
+    height:100%; 
+}
+.con01L h2{
+    font-size:30px;
+    font-weight:500;
+    padding:30px 0 0 20px;
+}
+.con01L h2 span{
+    display:block;     /*줄바꿈하기위해 블럭적용*/ 
+    font-size:20px;
+}
+
+.con01R{
+    float:right;
+    width:610px;       /*이미지285*2+사이여백20+pdtList li:여백20*/ 
+}
+
+.conTit{
+    position:absolute;
+    width:280px;
+    word-break:keep-all;  /*글씨를 중간에 떨어트려주기*/
+    margin-left:20px;
+}
+.conTit h2{
+    font-family:'Montserrat';
+    font-size:36px;
+    font-weight:700;
+    margin-bottom:20px; 
+}
+.conTit p{}
+
+.sliderBtn{}
+.sliderBtn li{
+    width:25px;
+    height:25px;
+    background:#bbb url(../images/main/arrowL.png) no-repeat center center;
+    border-radius:50%;
+    text-indent:-9999px;
+    float:left;
+    margin-top:80px;
+    margin-right:10px; 
+    
+}
+.sliderBtn .nextBtn{
+    background-image:url(../images/main/arrowR.png);  
+}
+.sliderBtn li a{
+    display:block; 
+}
+
+.pdtList{}
+.pdtList li{
+    float:left;
+    margin-left:20px;     /*con01R 가로값에 여백을 더해줘서 굳이 마지막자식 여백 없애도 됨*/
+    border-radius:30px 0;
+    overflow:hidden;      /*이미지는 overflow로 감춰줘야 영역안에 이미지가 들어감*/
+    text-align:center;
+    position:relative;
+   
+}
+.pdtList li:first-child{
+    margin-left:325px;   /*가로값과 여백을 더해서 적용*/
+    margin-bottom:30px; 
+}   
+.pdtList li a{}
+.pdtList li img{
+    display:block;
+    transition:transform 0.5s; 
+}
+
+/*호버(이미지를 적용했을때)*/
+.pdtList li:hover img{
+    transform:scale(1.2);   /*적용후 img에 transition 적용*/
+}
+/*호버*/
+
+.pdtList li p{
+    position:absolute;
+    background:#fff;
+    font-size:20px;
+    font-weight:400; 
+    width:100%;
+    height:50px;
+    line-height:50px; 
+    bottom:0;         /*앱솔루트로 띄우고 나면 p태그가 안보여서 bottom적용하면 보여짐*/ 
+}
+
+/*메인컨텐츠02*/
+.mainCon02{
+    background-image:url(../images/main/mainCon02Bg.png);    
+}
+
+.mainCon02 .conTit, .mainCon04 .conTit, .mainCon05 .conTit, .location .conTit{
+    position:static;       /*conTit앱솔루트 적용이 되어 있어서 기본값으로 정해줌*/
+    margin-left:0;         /*왼쪽의 여백을 다 없애줌*/
+    color:#fff;
+    text-align:center; 
+    width:auto;            /*위에 가로값이 적용되어 있기때문에 마진이나 패딩이 적용되어도 가로값을 auto적용*/
+    margin-bottom:50px; 
+}
+.mainCon02 .conTit h2{}
+.mainCon02 .conTit p{}
+
+.con02List{
+    position:relative; 
+}
+.con02List li{
+    width:380px;     /*가로값적용*/
+    height:500px;    /*세로간격이 각자 달라서 세로값을 적용해줌*/ 
+    background:#fff;
+    float:left;
+    margin-right:30px;
+    position:relative;
+    border-radius:0 50px 0 0;
+    overflow:hidden; 
+}
+.con02List li:last-child{margin-right:0; }
+
+.con02Img{overflow:hidden;}
+/*hover에서 transform적용후 이미지를 감싸고 있는 부모를 html에서 만들어주고 overflow:hidden적용*/
+
+/*호버(li안에 이미지가 있을경우)*/
+.con02List li:hover img{
+    transform:scale(1.5);
+}
+.con02List li img{
+    display:block;
+    transition:transform 0.5s; /*hover에서 transform적용후 overflow:hidden적용후 img에 transition적용*/
+}
+
+.con02Info{
+    padding:20px;   /*사방으로 패딩 적용*/
+    word-break:keep-all; 
+}
+.con02Info h3{
+    font-size:22px;
+    margin-bottom:15px; 
+}
+.con02Info p{
+    color:#666;
+}
+
+.moreBtn{
+    width:140px;
+    height:45px;
+    line-height:45px;
+    border:1px solid #ee2e24;
+    border-radius:30px;
+    font-family:'Godo';
+    background:url(../images/main/plusBtn.png) no-repeat 90% center;
+    text-indent:10px;   /*텍스트 들여쓰기*/
+    font-size:14px;
+    position:absolute;   /*li 텍스트의 줄이 다르기때문에 앱솔루트로 띄워야 밑으로 동일하게 간격적용 가능함*/
+    bottom:10px;
+}
+.moreBtn a{
+    color:#ee2e24;
+    display:block; 
+}
+
+
+.con02Arrow{
+    width:44px;
+    height:83px;     
+    background:url(../images/main/arrowLB.png) no-repeat;
+    text-indent:-9999px;
+    position:absolute;
+    top:50%;
+    margin-top:-42px; 
+}
+.con02LArrow{
+    left:-80px; 
+}
+.con02LArrow a{
+    display:block;
+    height:100%; 
+}
+.con02RArrow{
+    background-image:url(../images/main/arrowRB.png);
+    right:-80px; 
+     
+}
+.con02RArrow a{    
+    display:block;
+    height:100%;     /*전체적으로 영역에 링크걸리게 하기 위해 세로100%적용*/
+}
+
+/*메인컨텐츠03*/
+.mainCon03{
+    background-image:url(../images/main/mainCon03Bg.png);
+}
+.mainCon03 img{
+    display:block;      /*모든이미지에 적용*/ 
+}
+.mainCon03 .conTit{
+    margin-left:0;      /*왼쪽 여백 없애줌*/ 
+}
+.mainCon03 .conTit span{
+    font-family: 'Notosans';
+}
+.mainCon03 .conTit p{}
+
+.youtube{
+    text-align:right;
+    margin-bottom:20px; 
+}
+
+.youtube iframe{
+    display:block; 
+    margin:0 0 0 auto;   /*이미지가 일라인요소기때문에 오른쪽으로 정렬 */
+}
+
+.snsList{
+    margin-top:50px; 
+}
+.snsList li{
+    float:left;
+    width:50px;
+    height:50px;
+    line-height:50px; 
+    border:1px solid #ccc;
+    border-radius:50%; 
+    text-align:center;
+    margin-right:15px; 
+}
+.snsList li a{
+    display:block; 
+}
+.snsList li img{
+    display:inline-block;      /*메인컨03에 디스플레이 적용을 줬기때문에 텍스트 얼라인을 주기 위해 일라인블럭을 적용*/
+    vertical-align:middle;     /*세로중앙정렬하기 위해 버티칼을 주고 line-height도 적용*/
+    margin-top:-4px;           /*a태그에 여백이 -4px가 있기때문에 적용*/ 
+}
+
+.con03List{}
+.con03List li{
+    float:left;
+    margin-right:20px; 
+}
+.con03List li:last-child{margin-right:0; }
+.con03List li a{}
+.con03List li img{}
+
+/*메인컨텐츠04*/
+.mainCon04{
+    background-image:url(../images/main/mainCon04Bg.png);
+}
+.mainCon04 .conTit{
+    color:#333;
+}
+
+.con04List{
+    border-radius:50px 0 50px 0;      /*ul전체에다가 border-radius하면 li에 플루트 준거에 cf를 안줘도 영역이 잡힘*/
+    overflow:hidden; 
+}
+.con04List li{
+    float:left; 
+    width:380px;
+    margin-right:30px;
+    position:relative; 
+}
+.con04List li:last-child{margin-right:0;}
+.con04List li a{}
+.con04List li img{    
+    display:block;  /*이미지라서 블럭적용을 해줘야 border-radius가 라인이 부드러워짐*/
+}
+
+.con04Tit{
+    width:100%;              /*1.가로값을 100%로 해주고난뒤*/
+    text-align:center;       /*2.글자중앙정렬을 해주고*/
+    position:absolute;
+    top:50%;               /*position:relative하고 나면 con04Tit가 없어지기때문에 top(위치)을 정해줘야함*/
+    margin-top:-81px;      /*또는 top:114px적용가능함(이미지390-con04Tit162/2)*/
+    font-size:24px;
+    color:#fff;
+}
+.con04Tit img{
+    margin:0 auto;        /*3.이미지도 중간 정렬됨*/
+    margin-bottom:20px; 
+}
+.con04Tit h3{}
+
+/*메인컨텐츠05*/   /*메인컨텐츠02의 css가 다 적용되어 있음*/
+.mainCon05{
+    background-image:url(../images/main/mainCon05Bg.png);
+    padding-bottom:0; 
+}
+
+.mainCon05 .conTit{
+    color:#333;
+}
+.con05List li{
+    height:450px;
+}
+
+/*con02List에 있는 속성이 적용되어서 hover가 적용되도 원본으로 유지하게 스케일(1)을 적용*/
+.con05List li:hover img{   
+    transform:scale(1);
+}
+.con05Info{}
+.con05Info dl{
+    margin-bottom:20px; 
+}
+.con05Info dt{
+    display:inline-block;  /*한줄로 정리하는 정렬하는 방법(dt,dd같이적용)*/
+    font-size:14px;
+    font-weight:bold;
+    color:#f36c4d;
+}
+.con05Info dt::after{
+    content:"";
+    display:inline-block; /*옆으로 붙게 하려면 inline-block적용*/
+    width:1px;
+    height:12px;
+    background:#bbbbbb;
+    margin:0 20px; 
+}
+.con05Info dd{
+    display:inline-block;  /*한줄로 정리하는 정렬하는 방법(dt,dd같이적용)*/
+}
+
+.con05Info h3{    
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis; 
+}
+
+.con05News{
+    margin-top:100px; 
+    background:#f36c4d;
+    color:#fff;
+    height:40px;
+    line-height:40px;     /*newsArrow와 newsList이 세로중간정렬하게 적용*/
+    padding:15px 0;       /*패딩적용해서 전체 세로중간에 맞게 적용*/
+}
+.con05News .inner{
+    position:relative;   /*newsPlusBtn기준점*/
+}
+.con05News a{
+    color:#fff;
+}
+.con05News h3{
+    position:absolute;
+    font-size:18px; 
+}
+.news{
+    padding:0 100px;   /*가로값이 없어서 스크롤이 안생김*/ 
+}
+.newsArrow{             /*화살표 정렬하는 법*/
+    position:absolute;
+    height:40px;     /*1.부모의 세로값을 정해줌,세로값이 정해지면 기준점 없어도 됨*/
+}
+.newsArrow>div:last-child{   
+    position:absolute;    /*2.밑에 화살표를 앱솔루트로 띄우고*/
+    bottom:0;             /*3.밑으로 위치하게 적용*/
+}
+.newsArrow>div{ 
+     /*newsArrow 여백적용*/ 
+}
+.newsArrow>div a{
+}
+.newsArrow>div img{
+    display:block;    /*이미지의 여백 없애기*/
+    padding:5px 5px; 
+}
+
+.newsList{
+    padding-left:50px;
+    
+}
+.newsList li{
+    
+}
+.newsList li a{
+    overflow:hidden;    /*a태그에 cf를 줘야 하나 줄수 없기에 여기에 적용*/
+    display:block;      /*플러스버튼을 떨어트리게 적용*/ 
+}
+.newsList li p{
+    float:left; 
+}
+.newsList li span{
+    float:right;
+    font-size:14px; 
+}
+
+.newsPlusBtn{
+    position:absolute;
+    right:0;
+    top:0;
+    width:40px;
+    height:40px;
+    background:#fff url(../images/common/fPlusBtn.png) no-repeat center center;
+    border-radius:50%;
+    text-indent:-9999px;
+    transition:transform 1s linear;   /*hover에서 transform적용후 transition적용*/
+    font-size:0;      /*transition적용후 폰트사이즈를 0으로 해야 스크롤이 안생김*/
+}
+
+/*호버적용(버튼돌아가게하는적용)*/
+.newsPlusBtn:hover{
+    transform:rotate(720deg);
+}
+
+
+.newsPlusBtn a{
+    display:block;
+    height:100%; 
+}
+
+/*location 지도추가css*/
+.location{
+    padding:100px 0; 
+}
+.location .conTit{ 
+    color:#333;
+}
+.map{
+    height:500px;
+    overflow:hidden;      /*이미지의 넘치는 부분을 안보이게 적용*/
+    position:relative; 
+}
+.map iframe{
+    position:absolute;
+    top:50%;
+    margin-top:-400px; 
+    
+    
+}

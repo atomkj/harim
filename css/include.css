@@ -1,0 +1,141 @@
+@charset "utf-8";
+/*헤더*/
+#header{   /*가로값이 있을땐 패딩적용해야하고 박스사이징 적용하지만 없으면 마진,패딩 아무거나 줘도 됨*/
+    padding:30px 50px;  /*가로값적용했기때문에 패딩으로 적용*/ 
+    position:fixed;   /*헤더위에 슬라이더를 올리기위해 포지션를 적용(후에 로고와 유틸이 왼쪽으로 쏠리기 때문에 가로값적용) 포지션으로 띄우면 위쪽으로 붙을거기때문에 기준점 적용 안해도 됨*/
+    width:100%;          /*가로값적용하고 나면 왼쪽 오른쪽으로 구분됨*/
+    box-sizing:border-box;  /*로고와 유틸이 안쪽으로 들어오게 박스사이징 적용*/
+    z-index:1;       /*화면이 작아지면 로고와 util메뉴가 내릴경우 숨겨지기때문에 맨위로 순서 적용*/ 
+}
+
+#header h1{
+    float:left;  /*util을 플루트를 주고 나면 메인슬라이더 영역이 올라오기 때문에 플루트적용후 cf적용*/ 
+}
+#header h1 a{}
+
+.util{
+    font-size:12px;
+    float:right;   /*오른쪽 정렬하기 위해 라이트 주고 나면 cf줄 필요없음*/
+}
+.util li{
+    float:left;     /*옆으로 정렬하기 위해 플루트레프트를 준후*/
+    margin-left:20px; 
+}
+.util li a{
+    background:url(../images/common/csIcon.png) no-repeat center top;
+    padding-top:30px;  /*이미지와 글자를 떨어시켜주기 위해 패딩을 적용*/
+    display:block;     /*이미지의 여백때문에 디스플레이 적용*/
+}
+
+.util .lang a{    /*lang이미지를 바꿀땐 a태그까지 적어 줘야 적용 가능*/
+    background-image:url(../images/common/langIcon.png); 
+}
+.util .menu a{ 
+    background-image:url(../images/common/menuIcon.png); 
+}
+
+/*rightArrow*/
+.rightArrow{
+    position:fixed;
+    right:0;
+    top:50%;    /*1.창 기준으로 중간정렬이 되게 하려면 탑50%주고*/
+    margin-top:-50px; /*2.마진탑-50px적용하면 창세로 중간정렬됨*/
+}
+.rightArrow>div{
+    width:50px;
+    height:50px;
+    line-height:50px; 
+    background:#fff;
+    border:1px solid #ddd;
+    box-sizing:border-box;
+    text-align:center; 
+}
+.rightArrow>div a{
+    display:block; 
+}
+.rightArrow>div img{
+    vertical-align:middle;    /*버튼의 세로정렬이 어긋나 버티칼로 정렬*/ 
+}
+
+/*푸터*/
+#footer{
+    background:#333;
+    color:#999;
+    font-size:13px;
+    padding:30px 0; 
+}
+#footer a{
+    color:#999;
+}
+#footer .inner{
+    position:relative;   /*fBtn의 기준점*/ 
+}
+.fMenu{}
+.fMenu li{
+    float:left;
+    margin-right:20px; 
+}
+#footer .fMenu li:first-child a{
+    color:#fff;
+    font-weight:bold;
+}
+.fMenu li a{}
+
+.fInfo{
+    padding:50px 0;
+    line-height:25px;      /*행간주기*/ 
+}
+.fInfo p{}
+.fInfo span{
+    vertical-align:middle; /*span과 선을 중간 정렬하려면 미들을 해주기*/
+}
+.fInfo span::after{
+    content:"";
+    display:inline-block;
+    width:1px;
+    height:12px;
+    background:#999;
+    margin:0 5px;
+    vertical-align:middle;   /*span과 선을 중간 정렬하려면 미들을 해주기*/
+}
+.fInfo span:last-child::after{
+    display:none;
+}
+.copy{}
+
+.fBtn{
+    position:absolute;  /*플루트를 준후 앱솔루트 적용해서 cf로 안줘도됨*/
+    top:0;
+    right:0; 
+}
+.fBtnL,.family {   
+    float:left;
+    width:120px;
+    height:35px;
+    line-height:35px;
+    border-radius:30px;
+    background:#111;
+    text-align:center; 
+}
+.fBtnL a{}
+.family{
+    width:200px;
+    background:none;
+    border:1px solid #999;
+    box-sizing:border-box; 
+    margin-left:20px; 
+}
+.family select{
+    appearance:none;    /*효과 없애기*/
+    border:0;
+    background:none;
+    width:100%;   /*글씨영역이 잘려서 가로값100%적용*/
+    height:33px;  /*.fBtnL,.family세로값에서 보더선2px빼고 적용*/   
+    color:#999;
+    outline:none;  /*마우스클릭했을때 선안보이게 적용*/
+    padding-left:20px;
+    cursor:pointer;
+    background:url(../images/common/arrowBG.png) no-repeat 90% center;
+    vertical-align:top;  /*탑으로 올려서 세로간격 맞추기*/
+    font:13px 'notosans'; /*폰트에 한번에 적용가능*/
+}
